@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+    scroll-padding-top: 100px;
+}
+
+/* Nav bar */
+.scrolled__navbar {
+    @apply bg-white border-b text-gray-700 shadow-md;
+}
+
+.init__navbar {
+    @apply bg-black/30 backdrop-filter backdrop-blur-2xl text-white;
+}
+
+/* end navbar */
+
+#prev,
+#next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#prev {
+    left: 10px;
+}
+
+#next {
+    right: 10px;
+}
+
+#prev:hover,
+#next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Overlay btn */
+.overlay-btn {
+    @apply bg-transparent border  border-slate-100 inline-block py-3 px-6 rounded-full text-white uppercase tracking-widest transition-colors duration-500 relative overflow-hidden z-10 font-medium;
+}
+
+.overlay-btn::after {
+    @apply bg-primary-500 absolute left-0 overflow-hidden bottom-0 h-full w-0 rounded-full transition-all duration-500 -z-10;
+
+    content: "";
+}
+
+.overlay-btn:hover {
+    color: #fff;
+}
+
+.overlay-btn:hover::after {
+    width: 100%;
+}
+
+/* swiper paginator */
+
+/* Customize pagination bullets */
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: #d1d5db; /* Gray color */
+    opacity: 1; /* Ensure visibility */
+    margin: 0 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Active bullet */
+.swiper-pagination-bullet-active {
+    @apply !bg-primary-500;
+    transform: scale(1.2); /* Enlarge active bullet */
+}
