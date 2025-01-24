@@ -15,7 +15,7 @@ body {
 }
 
 .init__navbar {
-    @apply bg-black/30 backdrop-filter backdrop-blur-2xl text-white;
+    @apply bg-black/50 backdrop-filter backdrop-blur-2xl text-white;
 }
 
 /* end navbar */
